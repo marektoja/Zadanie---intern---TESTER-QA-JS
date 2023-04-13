@@ -55,7 +55,7 @@ console.log(`Input: ${input}`);
             } else if (word.length == maxLength) 
             {
                 // else if word has the same length
-                log(`? Word the same as current max lenth ${maxLength}`);
+                console.log(`? Word the same as current max lenth ${maxLength}`);
                 if (longestSubstrings.includes(word)) 
                 {
                     console.log(`- Word already on list - ignoring`);
