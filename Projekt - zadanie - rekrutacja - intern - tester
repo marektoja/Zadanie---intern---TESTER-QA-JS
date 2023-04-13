@@ -1,0 +1,51 @@
+//user strings input into number of uniqe elements
+
+console.log("Program to find number of uniqe signs, characters from user input");
+
+//userarray contains user signs splited into array
+let userarray = []
+
+let signs = prompt("Please enter your sign, character");
+
+//splitting user signs into array, printing user signs (as an array)
+userarray = signs.split("");
+console.log("User signs are: ");
+console.log(userarray);
+
+//counting number of user signs
+let numberOfSigns = userarray.length
+console.log("Number of user signs is: ");
+console.log(numberOfSigns);
+
+//initial value of result - result will be number of uniqe elements
+let result = 0;
+
+//resultarray will contain only uniqe signs from user
+let resultarray = []
+
+
+//two loops to search uniqe elements
+for (let i = 0; i < userarray.length; i++) 
+  {
+    write = true;
+    for (let j = 0; j < i; j++)
+	  {
+//comparing specific element with all previous elements of userarray - if elements are the same, then write is true
+      	if (userarray[i] == userarray[j]) 
+		      {
+       		 write = false;
+        	 break;
+		      }
+    }
+//only when elements were not the same write is true and element is added
+    if (write) 
+	    {
+      	resultarray.push(userarray[i]);
+	    }
+}  
+
+result = resultarray.length;
+console.log("Result array is = ");
+console.log(resultarray);
+console.log("Number of uniqe elements is = ");
+console.log(result);
