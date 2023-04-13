@@ -1,0 +1,75 @@
+console.log("Program finds longest unique substrings from input");
+
+let input = prompt("Enter input: ", "abcabcbb");
+
+// check if input is correct
+        if (input == null || input.length == 0) 
+        {
+            console.log("No input entered, exiting.");
+        }
+
+console.log(`Input: ${input}`);
+
+       // handy variables
+        var longestSubstrings = [];
+        var maxLength = 0;
+
+        // go through each input letter position as starting point
+        for (let startIndex = 0; startIndex < input.length; startIndex++) 
+        {
+          // create empty word to accumulate letters
+            var word = "";
+
+            // go through each letter starting from starting point
+            var letter = "";
+            var endIndex = 0;
+            for (endIndex = startIndex; endIndex < input.length; endIndex++) 
+            {
+                // get letter from input
+                letter = input[endIndex]
+
+                if (word.includes(letter)) 
+                {
+                    // if letter already in word, finish working with word
+                    break;
+                } else 
+                  {
+                    // otherwise add letter to word and go to next letter
+                    word += letter;
+                  }
+            }
+
+            console.log(`Found word with unique letters: ${word} (length: ${word.length})`);
+            console.log(`Ignored next letter ${letter}, because ${word} already contains it`);
+
+            if (word.length < maxLength) 
+            {
+                // if word shorter than longest word, ignore word and continue
+                console.log("- Word too short - ignoring");
+            } if (word.length > maxLength) 
+            {
+                // if word longer than longest word, overwrite everything
+                console.log(`+ Word longer than current max length ${maxLength} - overwriting`);
+                maxLength = word.length;
+                longestSubstrings = [word];
+            } else if (word.length == maxLength) 
+            {
+                // else if word has the same length
+                log(`? Word the same as current max lenth ${maxLength}`);
+                if (longestSubstrings.includes(word)) 
+                {
+                    console.log(`- Word already on list - ignoring`);
+                } else 
+                {
+                    console.log(`+ Word not yet on list - appending`);
+                    // if word is not added add to list
+                    longestSubstrings.push(word);
+                }
+            }
+
+            const joined = longestSubstrings.join(", ");
+  }
+        const joined = longestSubstrings.join(", ");
+        console.log(`!!! Final unique substrings: [${joined}], count: ${longestSubstrings.length}, length: ${maxLength}`);
+
+console.log("Program finished");
