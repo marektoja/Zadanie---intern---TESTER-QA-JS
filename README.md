@@ -6,6 +6,7 @@ PLIK PDF
 + kod (suma unikalnych stringów)
 
 Implementacja zad. nr 2:
+
   Task-intern-QA-JS.cy.js
   
   cypress.config.ts
